@@ -32,6 +32,7 @@ class Home extends CI_Controller
         if ($this->input->method() == 'post') {
             $errors = array(); //To store errors 
             $form_data = array(); //Pass back the data to `form.php` 
+            $location = '0';
             $quantity = 0;
             $date = '';
             $time = '';
@@ -49,6 +50,7 @@ class Home extends CI_Controller
             if (isset($data)) {
 
                 // Validate form data
+                $location = html_escape($data->location);
                 $quantity = html_escape($data->quantity);
                 $date = html_escape($data->date);
                 $time = html_escape($data->time);
@@ -61,6 +63,9 @@ class Home extends CI_Controller
                 $comment = html_escape($data->comment);
                 $privacy = $data->privacy;
 
+                if (empty($location)) {
+                    $errors['location'] = 'Location incorrect';
+                }
 
                 if (!filter_var($quantity, FILTER_VALIDATE_INT, array("options" => array("min_range" => 1, "max_range" => 8)))) {
                     $errors['quantity'] = 'Quantity incorrect';
