@@ -14,7 +14,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body>
     <h3>Vielen Dank für Ihre Reservierung!</h3>
     <p>
-        Hiermit bestätigen wir Ihre Reservierung bei Taverna Porto Elia <?php if($location == '0'): echo ""; else: "- Meat & Greek"; endif; ?>:
+        Hiermit bestätigen wir Ihre Reservierung bei <?php if ($location == 'RESTAURANT') { echo "Restaurant"; } else { echo "Taverve"; } ?> Porto Elia <?php if($location == 'RESTAURANT') { echo ""; } else { echo "- Meat & Greek"; } ?>:
     </p>
 
     <div>
@@ -48,9 +48,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
             Wir freuen uns auf Sie! <br>
 
             <address>
-                Taverna Porto Elia <?php if($location == '0'): echo ""; else: "- Meat & Greek"; endif; ?><br>
-                <?php if($location == '0'): echo "Obere Waiblinger Straße 153"; else: "Deckerstr. 51"; endif; ?><br>
-                <?php if($location == '0'): echo "70374 Stuttgart"; else: "70372 Stuttgart"; endif; ?><br>
+                <?php if ($location == 'RESTAURANT') { echo "Restaurant"; } else { echo "Taverve"; } ?> Porto Elia <?php if ($location == 'RESTAURANT') { echo ""; } else { echo "- Meat & Greek"; } ?><br>
+                <?php if ($location == 'RESTAURANT') { echo "Obere Waiblinger Straße 153"; } else { echo "Deckerstr. 51"; } ?><br>
+                <?php if ($location == 'RESTAURANT') { echo "70374 Stuttgart"; } else { echo "70372 Stuttgart"; } ?><br>
             </address>
             <p>
                 Website: www.porto-elia.de <br>

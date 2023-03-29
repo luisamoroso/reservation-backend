@@ -32,7 +32,7 @@ class Home extends CI_Controller
         if ($this->input->method() == 'post') {
             $errors = array(); //To store errors 
             $form_data = array(); //Pass back the data to `form.php` 
-            $location = '0';
+            $location = '';
             $quantity = 0;
             $date = '';
             $time = '';
@@ -127,7 +127,6 @@ class Home extends CI_Controller
 
                     // Customer email
                     $this->email->to($data->email);
-                    //$this->email->to('luis.amoroso@hotmail.com');
 
                     $this->email->subject('Reservierungsbestätigung');
                     $email_customer_confirmation = $this->load->view('email_customer_confirmation', $data, true);

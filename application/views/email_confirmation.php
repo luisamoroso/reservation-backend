@@ -11,7 +11,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 </head>
 
 <body>
-    Neue Reservierung in <?php if($location == '0'): echo "Taverna Porto Elia"; else: "Meat & Greek"; endif; ?>:
+    Neue Reservierung in 
+    <?php 
+        if ($location == 'RESTAURANT') { 
+            echo "Restaurant Porto Elia";
+        } 
+        else {
+            echo "MEAT & GREEK";
+        } 
+    ?>:
     <div>
         <p>
             <b>Vorname: </b> <?php echo $firstname ?>
